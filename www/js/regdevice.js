@@ -39,8 +39,9 @@ $(document).ready(function () {
     $("#home").click(function () {
         $.ajax({
             type: "GET",
-            url: "http://202.83.27.199/KPCTSDS/api/Account/GetUserScreens/" + $("#hidusrid").val(),
-	    //url: "http://182.72.244.25/KPCTSDS/api/Account/GetUserScreens/" + $("#hidusrid").val(),
+			url: "http://202.83.27.199/TestAPI/api/User/GetUserScreens/" + $("#hidusrid").val(),
+            //url: "http://202.83.27.199/KPCTSDS/api/Account/GetUserScreens/" + $("#hidusrid").val(),
+	        //url: "http://182.72.244.25/KPCTSDS/api/Account/GetUserScreens/" + $("#hidusrid").val(),
             data: '{}',
             contentType: "application/json",
             success: function(result) {
@@ -65,12 +66,12 @@ $(document).ready(function () {
             var Adddata = {};
             Adddata.IMEI = $("#txtimei").val();
             Adddata.UUID = $("#txtuuid").val();
-            Adddata.LocationType = _loctype;
+            //Adddata.LocationType = _loctype;
             Adddata.User = 'admin';
             $.ajax({
                 type: 'POST',
                 url: 'http://202.83.27.199/KPCTSDS/api/Account/RegisterDevice',
-		//url: 'http://182.72.244.25/KPCTSDS/api/Account/RegisterDevice',
+		        //url: 'http://182.72.244.25/KPCTSDS/api/Account/RegisterDevice',
                 dataType: "json",
                 data: Adddata,
                 success: function (loctyperesult) {
