@@ -114,7 +114,7 @@ function GetDeviceStatus(){
                     type: "GET",
                     contentType: "application/json; charset=utf-8",
                     url: 'http://202.83.27.199/KPCTSDS/api/Location/GetLocationType/',
-		    //url: 'http://182.72.244.25/KPCTSDS/api/Location/GetLocationType/',
+					//url: 'http://182.72.244.25/KPCTSDS/api/Location/GetLocationType/',
                     dataType: "json",
                     data: '{}',
                     async: false,
