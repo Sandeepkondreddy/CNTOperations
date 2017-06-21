@@ -52,11 +52,11 @@ $(document).ready(function () {
 
     $("#btnSubmit").click(function (){debugger;
         var _loctype = $("#selLocType option:selected").val();
-        if(_loctype == 0) {
-            $("#selLocType").focus();
-            alert('Please Select Location Type.');
-            return false;
-        }
+        //if(_loctype == 0) {
+        //    $("#selLocType").focus();
+        //    alert('Please Select Location Type.');
+        //    return false;
+        //}
         else {
             $(this).find("i.fa").attr('class', 'fa fa-spinner fa-spin');
             $(this).find("span").text(" device is registering please wait...");
@@ -71,7 +71,6 @@ $(document).ready(function () {
             $.ajax({
                 type: 'POST',
                 url: 'http://202.83.27.199/TestAPI/api/Device/RegisterDevice',
-		        //url: 'http://182.72.244.25/KPCTSDS/api/Account/RegisterDevice',
                 dataType: "json",
                 data: Adddata,
                 success: function (loctyperesult) {
