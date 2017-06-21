@@ -50,7 +50,7 @@ $(document).ready(function () {
         });
     });
 
-    $("#btnSubmit").click(function (){
+    $("#btnSubmit").click(function (){debugger;
         var _loctype = $("#selLocType option:selected").val();
         if(_loctype == 0) {
             $("#selLocType").focus();
@@ -70,7 +70,7 @@ $(document).ready(function () {
             Adddata.User = 'admin';
             $.ajax({
                 type: 'POST',
-                url: 'http://202.83.27.199/KPCTSDS/api/Account/RegisterDevice',
+                url: 'http://202.83.27.199/TestAPI/api/Device/RegisterDevice',
 		        //url: 'http://182.72.244.25/KPCTSDS/api/Account/RegisterDevice',
                 dataType: "json",
                 data: Adddata,
@@ -97,12 +97,13 @@ function GetDeviceStatus(){
     Adddata.UUID = $("#txtuuid").val();
     $.ajax({
         type: "POST",
-        url: "http://202.83.27.199/KPCTSDS/api/Account/GetDeviceStatus",
+        url: "http://202.83.27.199/TestAPI/api/Account/GetDeviceStatus",
 	//url: "http://182.72.244.25/KPCTSDS/api/Account/GetDeviceStatus",
         dataType: "json",
         data: Adddata,
         success: function (result) {
             $("#selLocType").empty();
+			
             if (result != null) {
                 $("#selLocType").append($("<option></option>").val(result).html(result));
                 $("#btnSubmit").prop('disabled', true);
