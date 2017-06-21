@@ -51,13 +51,13 @@ $(document).ready(function () {
     });
 
     $("#btnSubmit").click(function (){debugger;
-        var _loctype = $("#selLocType option:selected").val();
+        //var _loctype = $("#selLocType option:selected").val();
         //if(_loctype == 0) {
         //    $("#selLocType").focus();
         //    alert('Please Select Location Type.');
         //    return false;
         //}
-        else {
+        //else {
             $(this).find("i.fa").attr('class', 'fa fa-spinner fa-spin');
             $(this).find("span").text(" device is registering please wait...");
             $(this).attr('disabled', true);
@@ -81,7 +81,7 @@ $(document).ready(function () {
                     alert('Error Occurred while Registring device.\n\r' + xhr.responseText);
                 }
             });
-        }
+        //}
         $(this).find("i.fa").attr('class', 'fa fa-check');
         $(this).find("span").text(" Submit");
         $(this).attr('disabled', false);
